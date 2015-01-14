@@ -1,18 +1,13 @@
 public class Darts {
     public static void main(String[] args){
-        int[] zookRings=new int[]{0};
+
+        int[] zookRings = new int[]{0};
 
         System.out.println(Math.sqrt(simpleEM(zookRings,100,100)));
     }
 
-    // distances in mm
-    public static final double R1 = 7; // distance to double bullseye
-    public static final double R2 = 17; // distance to single bullseye
-    public static final double R3 = 96; // distance to inside triple ring
-    public static final double R4 = 107; // distance to outside triple ring
-    public static final double R5 = 161; // distance to inside double ring
-    public static final double R6 = 170; // distance to outside double ring
-    public static final double R7 = 200; // distance to edge of board
+    // distances in mm: center (0), inner bulls, outer bulls, inner triple, outer triple, inner double, outer double, edge of board, infinity (-1)
+    public static final double[] R = new double[]{0,7,17,96,107,161,170,200,-1};
 
     public static double simpleEM(int[] rings, double sInit, int numIter){
         double s = sInit;
@@ -23,14 +18,8 @@ public class Darts {
 
     private static double simpleStep(int[] rings, double s){
         double[] a = new double[8];
-        a[0] = integNumerator(s,0,R1) / integDenominator(s,0,R1);
-        a[1] = integNumerator(s,R1,R2) / integDenominator(s,R1,R2);
-        a[2] = integNumerator(s,R2,R3) / integDenominator(s,R2,R3);
-        a[3] = integNumerator(s,R3,R4) / integDenominator(s,R3,R4);
-        a[4] = integNumerator(s,R4,R5) / integDenominator(s,R4,R5);
-        a[5] = integNumerator(s,R5,R6) / integDenominator(s,R5,R6);
-        a[6] = integNumerator(s,R6,R7) / integDenominator(s,R6,R7);
-        a[7] = integNumerator(s,R7,-1) / integDenominator(s,R7,-1);
+        for(int i=0; i<8; i++)
+            a[i] = integNumerator(s,R[i],R[i+1]) / integDenominator(s,R[i],R[i+1]);
 
         int n = rings.length;
         double e = 0;
