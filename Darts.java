@@ -1,7 +1,7 @@
 public class Darts {
     public static void main(String[] args){
 
-        int[] zookRings = new int[]{0};
+        int[] zookRings = new int[]{0,7};
 
         System.out.println(Math.sqrt(simpleEM(zookRings,100,100)));
     }
@@ -29,16 +29,10 @@ public class Darts {
     }
 
     private static double integNumerator(double s, double r1, double r2){
-        if(r2==-1)
-            return (r1*r1+2*s)*Math.exp(-r1*r1/(2*s));
-        else
-            return (r1*r1+2*s)*Math.exp(-r1*r1/(2*s)) - (r2*r2+2*s)*Math.exp(-r2*r2/(2*s));
+        return (r1*r1+2*s)*Math.exp(-r1*r1/(2*s)) - (r2==-1 ? 0 : (r2*r2+2*s)*Math.exp(-r2*r2/(2*s)));
     }
 
     private static double integDenominator(double s, double r1, double r2){
-        if(r2==-1)
-            return Math.exp(-r1*r1/(2*s));
-        else
-            return Math.exp(-r1*r1/(2*s)) - Math.exp(-r2*r2/(2*s));
+        return Math.exp(-r1*r1/(2*s)) - (r2==-1 ? 0 : Math.exp(-r2*r2/(2*s)));
     }
 }
