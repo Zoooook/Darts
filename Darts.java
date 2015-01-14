@@ -19,20 +19,12 @@ public class Darts {
     private static double simpleStep(int[] rings, double s){
         double[] a = new double[8];
         for(int i=0; i<8; i++)
-            a[i] = integNumerator(s,R[i],R[i+1]) / integDenominator(s,R[i],R[i+1]);
+            a[i] = ((R[i]*R[i]+2*s)*Math.exp(-R[i]*R[i]/(2*s)) - (R[i+1]==-1 ? 0 : (R[i+1]*R[i+1]+2*s)*Math.exp(-R[i+1]*R[i+1]/(2*s)))) /
+                   (Math.exp(-R[i]*R[i]/(2*s)) - (R[i+1]==-1 ? 0 : Math.exp(-R[i+1]*R[i+1]/(2*s))));
 
-        int n = rings.length;
         double e = 0;
-        for(int i=0; i<n; i++)
+        for(int i=0; i<rings.length; i++)
             e += a[rings[i]];
-        return e/(2*n);
-    }
-
-    private static double integNumerator(double s, double r1, double r2){
-        return (r1*r1+2*s)*Math.exp(-r1*r1/(2*s)) - (r2==-1 ? 0 : (r2*r2+2*s)*Math.exp(-r2*r2/(2*s)));
-    }
-
-    private static double integDenominator(double s, double r1, double r2){
-        return Math.exp(-r1*r1/(2*s)) - (r2==-1 ? 0 : Math.exp(-r2*r2/(2*s)));
+        return e/(2*rings.length);
     }
 }
