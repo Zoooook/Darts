@@ -17,8 +17,8 @@ public class Darts {
     }
 
     private static double simpleStep(int[] rings, double s){
-        double[] a = new double[8];
-        for(int i=0; i<8; i++)
+        double[] a = new double[R.length-1];
+        for(int i=0; i<a.length; i++)
             a[i] = ((R[i]*R[i]+2*s)*Math.exp(-R[i]*R[i]/(2*s)) - (R[i+1]==-1 ? 0 : (R[i+1]*R[i+1]+2*s)*Math.exp(-R[i+1]*R[i+1]/(2*s)))) /
                    (Math.exp(-R[i]*R[i]/(2*s)) - (R[i+1]==-1 ? 0 : Math.exp(-R[i+1]*R[i+1]/(2*s))));
 
