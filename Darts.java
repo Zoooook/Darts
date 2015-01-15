@@ -7,7 +7,7 @@ public class Darts {
         System.out.println(Math.sqrt(simpleEM(zookRings,100,100)));
     }
 
-    // distances in mm: center (0), inner bulls, outer bulls, inner triple, outer triple, inner double, outer double, edge of board, infinity (-1)
+    // distances in mm: center (0), inner bull, outer bull, inner triple, outer triple, inner double, outer double, edge of board, infinity (-1)
     public static final double[] R = new double[]{0,7,17,96,107,160,169,224,-1}; // my board measurements
     //BDO tournament specs are {0, 6.35, 15.9, 97.4, 107, 160.4, 170, ?, -1);
 
@@ -27,7 +27,8 @@ public class Darts {
         double e = 0;
         int n = 0;
         for(int i=0; i<rings.length; i++){
-            e += rings[i]*a[i];
+            if(!Double.isNaN(a[i]))
+                e += rings[i]*a[i];
             n += rings[i];
         }
         return e/(2*n);
