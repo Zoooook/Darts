@@ -7,7 +7,7 @@ public class Darts {
     }
 
     // distances in mm: center (0), inner bulls, outer bulls, inner triple, outer triple, inner double, outer double, edge of board, infinity (-1)
-    public static final double[] R = new double[]{0,7,17,96,107,161,170,200,-1};
+    public static final double[] R = new double[]{0,7,17,96,107,160,169,224,-1};
 
     public static double simpleEM(int[] rings, double sInit, int numIter){
         double s = sInit;
