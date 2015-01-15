@@ -1,7 +1,7 @@
 public class Darts {
     public static void main(String[] args){
 
-        int[] zookRings = new int[]{0,7};
+        int[] zookRings = new int[]{2,2,24,1,1};
 
         System.out.println(Math.sqrt(simpleEM(zookRings,100,100)));
     }
@@ -23,8 +23,11 @@ public class Darts {
                    (Math.exp(-R[i]*R[i]/(2*s)) - (R[i+1]==-1 ? 0 : Math.exp(-R[i+1]*R[i+1]/(2*s))));
 
         double e = 0;
-        for(int i=0; i<rings.length; i++)
-            e += a[rings[i]];
-        return e/(2*rings.length);
+        int n = 0;
+        for(int i=0; i<rings.length; i++){
+            e += rings[i]*a[i];
+            n += rings[i];
+        }
+        return e/(2*n);
     }
 }
