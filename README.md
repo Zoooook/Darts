@@ -12,4 +12,4 @@ I've also modified it a bit. The original code just took your raw scores, then e
 
 There's a place to input the measurements from your own board (use any units you want, the &#963; output will be in those units), and there's a place to input your thrown dart results. Obviously the more darts you throw, the better your &#963; estimate will be. You don't have to pad your results with zeros, just close the array. The code is general and can support any bullseye/ring system, just input the measurements from the center to each boundary (make sure the first number is 0 and the last is -1), and record your results on that system. I added a measurement for the edge of the board, and you can add more if you want. As far as the code is concerned, any darts you threw outside the largest boundary might as well have been thrown across the street.
 
-Oh hey, I've created an easy to use [thing](http://jsfiddle.net/unc7f3g4/).
+I've also translated it to [JavaScript](http://jsfiddle.net/unc7f3g4/) and given it a nicer interface.
