@@ -16,7 +16,8 @@ I've also translated it to JavaScript and given it an [interface](http://jsfiddl
 
 ---
 
-References in case of link rot:  
+References in case of link rot:
+
 A Statistician Plays Darts -- Ryan Tibshirani, Andrew Price and Jonathan Taylor  
 Optimal Strategies for the Game of Darts -- David Kohler  
 Practical and efficient estimates of one’s accuracy in darts -- Sudipta Sadhukhan, Zhihui Liu, and James A. Hanley
