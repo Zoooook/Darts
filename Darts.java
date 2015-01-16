@@ -2,9 +2,9 @@ public class Darts {
     public static void main(String[] args){
 
         // double bull, single bull, inner single, triple, outer single, double, outer board, off board
-        int[] zookRings = new int[]{2,2,24,1,1};
+        int[] rings = new int[]{2,2,24,1,1};
 
-        System.out.println(Math.sqrt(simpleEM(zookRings,100,100)));
+        System.out.println(Math.sqrt(simpleEM(rings,100,100)));
     }
 
     // distances in mm: center (0), inner bull, outer bull, inner triple, outer triple, inner double, outer double, edge of board, infinity (-1)
