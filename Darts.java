@@ -9,7 +9,7 @@ public class Darts {
 
     // distances in mm: center (0), inner bull, outer bull, inner triple, outer triple, inner double, outer double, edge of board, infinity (-1)
     public static final double[] R = new double[]{0,7,17,96,107,160,169,224,-1}; // my board measurements
-    //BDO tournament specs are {0, 6.35, 15.9, 97.4, 107, 160.4, 170, ?, -1);
+    // BDO tournament specs are {0, 6.35, 15.9, 97.4, 107, 160.4, 170, ?, -1);
 
     public static double simpleEM(int[] rings, double sInit, int numIter){
         double s = sInit;
