@@ -1,6 +1,6 @@
 <div style="width:400px; overflow:auto;">
     <table style="float:left">
-        <tr><th>Distance to:</th></tr>
+        <tr><th style="text-align: left">Distance to:</th></tr>
         <tr>
             <td>Inner bull:</td>
             <td><input type="text" id="d1" value="7"/></td>
@@ -29,27 +29,35 @@
         <tr>
             <td>Double bull:</td>
             <td><input type="text" id="n1" value="0"/></td>
+            <td><input type="button" id="b1" value="+" onclick="increment(&quot;n1&quot;)"/></td>
         </tr><tr>
             <td>Single bull:</td>
             <td><input type="text" id="n2" value="0"/></td>
+            <td><input type="button" id="b2" value="+" onclick="increment(&quot;n2&quot;)"/></td>
         </tr><tr>
             <td>Inner single:</td>
             <td><input type="text" id="n3" value="0"/></td>
+            <td><input type="button" id="b3" value="+" onclick="increment(&quot;n3&quot;)"/></td>
         </tr><tr>
             <td>Triple:</td>
             <td><input type="text" id="n4" value="0"/></td>
+            <td><input type="button" id="b4" value="+" onclick="increment(&quot;n4&quot;)"/></td>
         </tr><tr>
             <td>Outer single:</td>
             <td><input type="text" id="n5" value="0"/></td>
+            <td><input type="button" id="b5" value="+" onclick="increment(&quot;n5&quot;)"/></td>
         </tr><tr>
             <td>Double:</td>
             <td><input type="text" id="n6" value="0"/></td>
+            <td><input type="button" id="b6" value="+" onclick="increment(&quot;n6&quot;)"/></td>
         </tr><tr>
             <td>Outer board:</td>
             <td><input type="text" id="n7" value="0"/></td>
+            <td><input type="button" id="b7" value="+" onclick="increment(&quot;n7&quot;)"/></td>
         </tr><tr>
             <td>Off board:</td>
             <td><input type="text" id="n8" value="0"/></td>
+            <td><input type="button" id="b8" value="+" onclick="increment(&quot;n8&quot;)"/></td>
         </tr>
         <tr><td><input type="button" value="Calculate!" style="width:100px" onclick="calculate()"/></td></tr>
         <tr><td id="sigma"></td></tr>
