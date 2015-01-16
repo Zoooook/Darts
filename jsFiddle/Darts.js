@@ -27,3 +27,7 @@ function simpleStep(rings, s, R){
     }
     return e/(2*n);
 }
+
+function increment(id){
+    document.getElementById(id).value = parseInt(document.getElementById(id).value)+1;
+}
